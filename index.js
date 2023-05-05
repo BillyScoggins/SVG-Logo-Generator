@@ -31,24 +31,22 @@ function init() {
       },
 
     ])
-    .then((data) => {
+    .then ((responses) => {
+      //console.log (data)
       const fileName = "logo.svg";
-      writeToFile(fileName, data);
+      const generateSVG = 
+      //writeToFile(fileName, data);
+      
+        fs.writeFile(fileName, responses, (err) => {
+          if (err) {
+            console.error(err);
+            return;
+          }
+          console.log('Generated logo.svg!');
+        });
+
     }
     );
 }
-
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, svg(data), (err) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log('Generated logo.svg!');
-  });
-}
-
-
-
 
 init();

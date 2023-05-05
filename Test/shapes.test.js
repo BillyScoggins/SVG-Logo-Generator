@@ -9,7 +9,7 @@ const Square = require("../lib/square")
      test("should render a red circle element", () => {
          const circle = new Circle();
          circle.setColor("blue");
-         expect(circle.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
+         expect(circle.render()).toEqual('<circle cx="25" cy="75" r="20" stroke="red" fill="transparent" stroke-width="5"/>');
 
      })
      
